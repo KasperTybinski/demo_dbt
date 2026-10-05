@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: music
+    description: "Raw music tables loaded from s3://mc-snowflake/sample/music/"
+    database: MUSIC_DB
+    schema: NORMALIZED
+    tables:
+      - name: TRACK
+      - name: ALBUM
+      - name: ARTIST
+      - name: GENRE
+      - name: MEDIA_TYPE
+      - name: PLAYLIST
+      - name: PLAYLIST_TRACK
