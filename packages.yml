@@ -1,0 +1,4 @@
+# Step 8: packages from the dbt Hub. Install them with "dbt deps".
+packages:
+  - package: dbt-labs/dbt_utils
+    version: [">=1.0.0", "<2.0.0"]

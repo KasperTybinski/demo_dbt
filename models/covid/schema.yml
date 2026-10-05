@@ -1,0 +1,25 @@
+version: 2
+
+# Step 1: declare the COVID19 Marketplace database as a source.
+# "database" must match the name the database has in your Snowflake account.
+sources:
+  - name: COVID19_Epidemiological_Data
+    description: 'Free COVID19 dataset from the Snowflake Marketplace'
+    database: COVID19_EPIDEMIOLOGICAL_DATA
+    schema: PUBLIC
+    tables:
+      - name: DEMOGRAPHICS
+        description: 'Population figures by country / region'
+      - name: APPLE_MOBILITY
+        description: 'Apple mobility data, used for the Switzerland test'
+        columns:
+          - name: COUNTRY_REGION
+            data_tests:
+              - switzerland   # Step 6: custom generic test
+
+models:
+  - name: my_first_join
+    columns:
+      - name: name
+        data_tests:
+          - switzerland       # Step 6: custom generic test
